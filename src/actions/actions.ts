@@ -119,8 +119,7 @@ export async function addPet(pet: unknown) {
     });
   } catch (error) {
     return {
-      message: "Could not add pet.",
-      error,
+      message: "Could not add pet. Test if error occurs here",
     };
   }
 
