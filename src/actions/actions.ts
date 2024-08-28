@@ -124,7 +124,7 @@ export async function addPet(pet: unknown) {
       message: "Could not add pet.",
       error: error instanceof Error ? error.message : String(error),
     };
-
+  }
   revalidatePath("/app", "layout");
 }
 
