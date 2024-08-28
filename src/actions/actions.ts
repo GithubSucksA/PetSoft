@@ -118,10 +118,12 @@ export async function addPet(pet: unknown) {
       },
     });
   } catch (error) {
+    console.error("Error in addPet:", error);
     return {
-      message: "Could not add pet. Test if error occurs here",
+      success: false,
+      message: "Could not add pet.",
+      error: error instanceof Error ? error.message : String(error),
     };
-  }
 
   revalidatePath("/app", "layout");
 }
