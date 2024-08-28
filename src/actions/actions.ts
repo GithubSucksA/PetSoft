@@ -71,7 +71,7 @@ export async function signUp(prevState: unknown, formData: unknown) {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   try {
-    await prisma?.user.create({
+    await prisma.user.create({
       data: {
         email,
         hashedPassword,
@@ -107,7 +107,7 @@ export async function addPet(pet: unknown) {
   }
 
   try {
-    await prisma?.pet.create({
+    await prisma.pet.create({
       data: {
         ...validatedPet.data,
         user: {
@@ -156,7 +156,7 @@ export async function editPet(petId: unknown, newPetData: unknown) {
 
   // database mutation
   try {
-    await prisma?.pet.update({
+    await prisma.pet.update({
       where: {
         id: validatedPetId.data,
       },
@@ -198,7 +198,7 @@ export async function deletePet(petId: unknown) {
 
   // database mutation
   try {
-    await prisma?.pet.delete({
+    await prisma.pet.delete({
       where: {
         id: validatedPetId.data,
       },
