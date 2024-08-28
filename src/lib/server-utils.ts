@@ -28,16 +28,12 @@ export async function getPetById(petId: Pet["id"]) {
 }
 
 export async function getPetByUserId(userId: User["id"]) {
-  try {
-    const pets = await prisma?.pet.findMany({
-      where: {
-        userId,
-      },
-    });
-    return pets;
-  } catch (error) {
-    console.error(error);
-  }
+  const pets = await prisma?.pet.findMany({
+    where: {
+      userId,
+    },
+  });
+  return pets;
 }
 
 export async function getUserByEmail(email: User["email"]) {
