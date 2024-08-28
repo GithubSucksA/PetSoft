@@ -1,7 +1,7 @@
 "use server";
 
 import { auth, signIn, signOut } from "@/lib/auth";
-import primsa from "@/lib/db";
+import prisma from "@/lib/db";
 import { authSchema, petFormSchema, petIdSchema } from "@/lib/validations";
 import { revalidatePath } from "next/cache";
 import bcrypt from "bcryptjs";
