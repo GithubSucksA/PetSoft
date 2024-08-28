@@ -44,7 +44,7 @@ function TopBar({ pet }: Props) {
 
       <h2 className="text-3xl font-semibold leading-7 ml-5">{pet.name}</h2>
 
-      <div className="ml-auto space-x-2">
+      <div className="ml-auto space-x-2 text-center space-y-1">
         <PetButton actionType="edit">Edit</PetButton>
         <PetButton
           actionType="checkout"
